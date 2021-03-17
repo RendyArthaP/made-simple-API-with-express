@@ -46,16 +46,26 @@ app.get('/users/:id', (req, res) => {
       data: user
     })
   }
+
 })
 
 app.post('/users', (req, res) => {
   const user = req.body
-  console.log(user)
-
   users.push(user)
+
   res.json({
     message: "success adding new user",
     data: users
+  })
+})
+
+app.delete('/users/:id', (req, res) => {
+  const id = req.params.id
+  const user = users.filter(item => item.id != id)
+
+  res.json({
+    message: "users deleted success",
+    data: user
   })
 })
 
