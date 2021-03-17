@@ -1,4 +1,3 @@
-const e = require('express')
 const express = require('express')
 const app = express()
 const port = process.env.port || 3000
@@ -67,6 +66,7 @@ app.delete('/users/:id', (req, res) => {
     message: "users deleted success",
     data: user
   })
+
 })
 
 app.listen(port, () => {
