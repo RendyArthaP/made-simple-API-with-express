@@ -2,14 +2,14 @@ const express = require('express');
 const users = require('../models/users');
 const router = express.Router()
 
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
   res.json({
     message: "get users success",
     data: users
   })
 })
 
-router.get('/users/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const id = req.params.id
   const user = users.find(item => item.id == id)
 
@@ -26,7 +26,7 @@ router.get('/users/:id', (req, res) => {
 
 })
 
-router.post('/users', (req, res) => {
+router.post('/', (req, res) => {
   const user = req.body
   users.push(user)
 
@@ -36,7 +36,7 @@ router.post('/users', (req, res) => {
   })
 })
 
-router.delete('/users/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const id = req.params.id
   const user = users.filter(item => item.id != id)
 
@@ -47,4 +47,4 @@ router.delete('/users/:id', (req, res) => {
 
 })
 
-module.export = router
+module.exports = router
