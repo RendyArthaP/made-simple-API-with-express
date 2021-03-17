@@ -21,7 +21,6 @@ module.exports = {
         data: user
       })
     }
-  
   },
   addUser: (req, res) => {
     const user = req.body
@@ -40,6 +39,5 @@ module.exports = {
       message: "users deleted success",
       data: user
     })
-  
   }
 }
