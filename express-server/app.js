@@ -31,6 +31,17 @@ app.get('/users', (req, res) => {
   })
 })
 
+app.get('/users/:id', (req, res) => {
+  const id = req.params.id
+  const user = users.find(item => item.id == id)
+
+  res.json({
+    message: "get users by id success",
+    data: user
+  })
+})
+
+
 app.listen(port, () => {
   console.log(`example app at http://localhost:${port}`)
 })
