@@ -18,6 +18,7 @@ const users = [
   },
 ]
 
+app.use(express.json())
 app.get('/', (req, res) => {
   res.json({
     message: "Hello everyone!"
@@ -47,6 +48,16 @@ app.get('/users/:id', (req, res) => {
   }
 })
 
+app.post('/users', (req, res) => {
+  const user = req.body
+  console.log(user)
+
+  users.push(user)
+  res.json({
+    message: "success adding new user",
+    data: users
+  })
+})
 
 app.listen(port, () => {
   console.log(`example app at http://localhost:${port}`)
