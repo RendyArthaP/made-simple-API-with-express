@@ -1,21 +1,8 @@
 const express = require('express')
 const app = express()
 const port = process.env.port || 3000
+const users = require('./models/users')
 
-const users = [
-  {
-    id: 0,
-    nama: "rendy"
-  },
-  {
-    id: 1,
-    nama: "artha"
-  },
-  {
-    id: 2,
-    nama: "prawira"
-  },
-]
 
 app.use(express.json())
 app.get('/', (req, res) => {
