@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router()
-const userRouter = require('./user');
+const userRouter = require('./user.routes');
 
 router.get('/', (req, res) => {
   res.json({
