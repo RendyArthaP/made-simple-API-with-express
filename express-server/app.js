@@ -35,10 +35,16 @@ app.get('/users/:id', (req, res) => {
   const id = req.params.id
   const user = users.find(item => item.id == id)
 
-  res.json({
-    message: "get users by id success",
-    data: user
-  })
+  if(!user) {
+    res.json({
+      message: "data id tidak ditemukan"
+    })
+  } else {
+    res.json({
+      message: "get users by id success",
+      data: user
+    })
+  }
 })
 
 
