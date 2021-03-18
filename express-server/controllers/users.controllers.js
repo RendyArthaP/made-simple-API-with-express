@@ -39,5 +39,15 @@ module.exports = {
       message: "users deleted success",
       data: user
     })
+  },
+  editUser: (req, res) => {
+    const id = req.params.id
+    const user = users.findIndex(person => person.id == id)
+    users[user] = req.body
+    
+    res.json({
+      message: "users updated",
+      data: users[user]
+    })
   }
 }
